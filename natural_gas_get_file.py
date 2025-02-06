@@ -58,7 +58,7 @@ def get_file(url):
 
     # Save the file locally
     try:
-        with open(f"tmp/natural_gas/{last_path_segment}", "wb") as file:
+        with open(f"/tmp/natural_gas/{last_path_segment}", "wb") as file:
             file.write(response.content)
         logging.info(f"File downloaded successfully as '{last_path_segment}'")
     except IOError as e:

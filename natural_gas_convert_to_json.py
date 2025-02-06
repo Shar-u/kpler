@@ -129,7 +129,7 @@ def convert_to_json(last_path_segment, publication_date, dl_link, extraction_dat
 
     # Save the output as JSON
     try:
-        with open(f"tmp/natural_gas/{last_path_segment}.json", "w") as f:
+        with open(f"/tmp/natural_gas/{last_path_segment}.json", "w") as f:
             json.dump(output, f, indent=4)
         logging.info(f"JSON file saved successfully as '{last_path_segment}.json'")
     except IOError as e:

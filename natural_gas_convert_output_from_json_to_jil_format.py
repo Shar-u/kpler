@@ -26,7 +26,7 @@ def convert_output_from_json_to_jil_format(last_path_segment, output_json):
     logging.info("Converting JSON data to JSON Lines (.jl) format.")
 
     try:
-        with open(f"tmp/natural_gas/{last_path_segment}.jl", "w") as f:
+        with open(f"/tmp/natural_gas/{last_path_segment}.jl", "w") as f:
             for record in output_json:
                 f.write(json.dumps(record) + "\n")
         logging.info(

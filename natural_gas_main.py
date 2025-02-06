@@ -45,7 +45,7 @@ def scrape_natural_gas_data():
     logging.info(natural_gas_url)
 
     try:
-        os.makedirs("tmp/natural_gas",exist_ok=True)
+        os.makedirs("/tmp/natural_gas",exist_ok=True)
         response, dl_link, last_path_segment = get_file(natural_gas_url)
         publication_date = get_publication_date(response)
         output_json = convert_to_json(
