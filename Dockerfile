@@ -12,7 +12,8 @@ RUN dnf install -y atk cups-libs gtk3 libXcomposite alsa-lib \
 RUN pip install selenium==4.28.1
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
-RUN pip install playwright
-RUN playwright install --with-deps
+RUN yum install -y libXcomposite libXcursor libXdamage libXext libXi libXtst libnss alsa-lib \
+    && pip install playwright \
+    && playwright install
 COPY . ./
 CMD [ "main.lambda_handler" ]
