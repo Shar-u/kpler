@@ -30,7 +30,7 @@ def convert_to_json(last_path_segment, publication_date, dl_link, extraction_dat
 
     try:
         # Load the Excel file
-        df = pd.read_excel(rf"{last_path_segment}", skiprows=9, header=[0, 1])
+        df = pd.read_excel(rf"/tmp/natural_gas/{last_path_segment}", skiprows=9, header=[0, 1])
         df.set_index(df.columns[0], inplace=True)
         logging.info("Excel file loaded successfully.")
     except Exception as e:
