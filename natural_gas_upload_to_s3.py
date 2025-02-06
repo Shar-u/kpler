@@ -27,7 +27,7 @@ def upload_to_s3(last_path_segment, bucket_name, source, extraction_date, layer)
     logging.info("Initializing S3 client.")
 
     s3_client = boto3.client("s3")
-    file_path = f"tmp/natural_gas/{last_path_segment}"
+    file_path = f"/tmp/natural_gas/{last_path_segment}"
     object_key = f"{source}/{extraction_date}/{layer}/{last_path_segment}"
 
     try:
