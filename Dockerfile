@@ -13,6 +13,7 @@ RUN dnf install -y atk cups-libs gtk3 libXcomposite alsa-lib \
 RUN pip install selenium==4.28.1
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
+ENV PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright
 RUN pip install playwright \
     && playwright install
 COPY . ./

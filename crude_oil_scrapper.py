@@ -21,6 +21,10 @@ Dependencies:
 import json, logging
 import time
 from playwright.sync_api import sync_playwright
+import os
+
+os.environ["PLAYWRIGHT_BROWSERS_PATH"] = "/opt/ms-playwright"
+
 
 # Configure logging with filename included
 logging.basicConfig(
@@ -28,6 +32,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(filename)s - %(message)s",
     force=True
 )
+
 
 
 def scrape(url, retries, delay):
