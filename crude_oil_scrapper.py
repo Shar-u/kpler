@@ -45,8 +45,9 @@ def scrape(url, retries, delay):
                     "--disable-web-security",
                     "--disable-features=IsolateOrigins,site-per-process",
                     "--no-sandbox",
-                ]
+                ],headless=True
             )
+            logging.info("Browser lunched")
         except Exception as e:
             logging.error(f"Failed to launch browser: {e}")
             raise
